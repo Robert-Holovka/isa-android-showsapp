@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <include
+        android:id="@+id/toolbar_shows_list"
+        layout="@layout/toolbar_shows" />
+
+    <ImageView
+        android:id="@+id/divider"
+        android:layout_below="@id/toolbar_shows_list"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/divider"/>
+
+    <TextView
+        android:layout_centerInParent="true"
+        android:drawableTop="@mipmap/ic_empty_placeholder"
+        android:id="@+id/text_view_empty_state__shows_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/empty_state_shows_list"
+        android:textAlignment="center"/>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_to_refresh_shows"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider">
+
+        <android.support.v7.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tv_shows_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/fab_switch_list_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_list_view"
+        android:layout_margin="20dp" />
+
+</RelativeLayout>

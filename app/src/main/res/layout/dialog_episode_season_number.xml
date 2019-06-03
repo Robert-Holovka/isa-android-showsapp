@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height= "match_parent"
+    android:padding="20dp">
+
+    <Button
+        android:textAllCaps="false"
+        android:layout_below="@+id/numberPicker_group1"
+        android:id="@+id/btn_save_episode_season"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textSize="18sp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"/>
+
+    <RelativeLayout
+        android:padding="15dp"
+        android:id="@+id/numberPicker_group1"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/pickSeasonTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Season"
+            android:textColor="@color/colorPrimary"/>
+
+        <NumberPicker
+            android:layout_below="@+id/pickSeasonTextView"
+            android:id="@+id/numberPickerSeason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_toEndOf="@+id/numberPicker_group1"
+        android:padding="15dp"
+        android:id="@+id/numberPicker_group2"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/pickEpisodeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Episode"
+            android:textColor="@color/colorPrimary"/>
+
+        <NumberPicker
+            android:layout_below="@+id/pickEpisodeTextView"
+            android:id="@+id/numberPickerEpisode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

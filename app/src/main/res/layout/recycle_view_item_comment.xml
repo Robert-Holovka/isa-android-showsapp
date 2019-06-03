@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="8dp">
+
+    <ImageView
+        android:id="@+id/image_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_user_avatar_1"
+        android:scaleType="fitStart"/>
+
+    <TextView
+        android:textSize="16sp"
+        android:layout_marginLeft="10dp"
+        android:paddingBottom="5dp"
+        android:id="@+id/text_view_comment_user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/test_text"
+        android:layout_toRightOf="@+id/image_comment"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_below="@id/text_view_comment_user_email"
+        android:textColor="@color/colorTextLight"
+        android:textSize="14sp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/text_view_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/test_text"
+        android:layout_toRightOf="@+id/image_comment" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/text_view_comment"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider"/>
+</RelativeLayout>

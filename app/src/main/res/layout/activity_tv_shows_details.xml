@@ -1,0 +1,245 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.show.details.TVShowDetailsActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorMaterialGray"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/TransparentToolbarTheme">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapse_toolbar_layout"
+            android:layout_width="match_parent"
+            android:background="@color/colorMaterialGray"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:scrimAnimationDuration="50"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:expandedTitleTextAppearance="@style/Toolbar.TitleTextTransparentExpanded"
+            app:expandedTitleMarginBottom="80dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rel_layout_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                    <ImageView
+                        android:id="@+id/image_show_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:foreground="@drawable/image_gradient_overlay"
+                        android:src="@mipmap/ic_empty_placeholder"
+                        android:scaleType="centerCrop"/>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/layout_like_status"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:clickable="false"
+                            android:id="@+id/btn_like"
+                            android:src="@drawable/ic_thumb_up_outline"
+                            android:background="@drawable/bg_round_button"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="5dp"
+                            android:drawable="@drawable/ic_thumb_up_outline"/>
+
+                        <TextView
+                            android:id="@+id/text_view_likes_count"
+                            android:layout_marginTop="8dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorTextLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="test"/>
+
+                        <ImageButton
+                            android:clickable="false"
+                            android:id="@+id/btn_dislike"
+                            android:src="@drawable/ic_thumb_down_outline"
+                            android:backgroundTint="@color/colorMaterialGray"
+                            android:layout_marginStart="5dp"
+                            android:background="@drawable/bg_round_button"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_below="@+id/rel_layout_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:textSize="24sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorTextRegular"
+                        android:id="@+id/text_view_show_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/test_text"/>
+
+                    <TextView
+                        android:maxLines="4"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/colorTextLight"
+                        android:textSize="16sp"
+                        android:id="@+id/text_view_show_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/test_text"
+                        android:layout_below="@id/text_view_show_title"/>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_marginTop="5dp"
+                        android:clickable="false"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/text_view_show_description"
+                        android:id="@+id/layout_show_more"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/shape_button_oval">
+
+                        <TextView
+                            android:textSize="14sp"
+                            android:id="@+id/text_view_show_more"
+                            android:clickable="false"
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center"
+                            android:textColor="@color/colorTextLight"
+                            android:text="Show more" />
+
+                        <ImageView
+                            android:id="@+id/image_show_more"
+                            android:clickable="false"
+                            android:layout_marginLeft="5dp"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_keyboard_arrow_down"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/text_view_episodes"
+                        android:textAllCaps="false"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorTextRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Episodes"
+                        android:layout_below="@+id/layout_show_more"/>
+
+                    <TextView
+                        android:id="@+id/text_view_number_of_episodes"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextHint"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:layout_below="@+id/layout_show_more"
+                        android:layout_toRightOf="@id/text_view_episodes"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                app:titleTextColor="@color/colorTextRegular"
+                android:id="@+id/transparent_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="top"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_back"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/layout_empty_state_show_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:drawableTop="@mipmap/ic_empty_placeholder"
+                android:id="@+id/text_empty_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_episode_list" />
+
+            <TextView
+                android:textAlignment="center"
+                android:layout_below="@+id/text_empty_state"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/text_add_new_episodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="Add some episodes"/>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.v7.widget.RecyclerView
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/episodes_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:scrollbars="vertical">
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_addEpisode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        android:layout_gravity="bottom|end"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="30dp"/>
+</android.support.design.widget.CoordinatorLayout>
